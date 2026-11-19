@@ -109,9 +109,20 @@
 
       </div>
 
+      <!-- MENSAJES -->
+      <div class="register-message error"
+           *ngIf="isRegister === false">
+        {{ mensaje }}
+      </div>
+
+      <div class="register-message success"
+           *ngIf="isRegister === true && mensaje !== ''">
+        {{ mensaje }}
+      </div>
 
       <!-- FORMULARIO -->
-      <form [formGroup]="formRegister"
+      <form class="register-form"
+            [formGroup]="formRegister"
             (ngSubmit)="registrarUsuario()">
 
         <!-- CORREO -->
@@ -128,12 +139,10 @@
               formControlName="email"
               placeholder="ejemplo@universidad.edu.co"
               autocomplete="email"
-              required
             >
           </div>
 
         </div>
-
 
         <!-- NOMBRE COMPLETO -->
         <div class="form-group">
@@ -149,12 +158,10 @@
               formControlName="fullName"
               placeholder="Ingresa tu nombre completo"
               autocomplete="name"
-              required
             >
           </div>
 
         </div>
-
 
         <!-- CONTRASEÑA -->
         <div class="form-group">
@@ -170,12 +177,10 @@
               formControlName="pass"
               placeholder="Crea una contraseña"
               autocomplete="new-password"
-              required
             >
           </div>
 
         </div>
-
 
         <!-- CONFIRMAR CONTRASEÑA -->
         <div class="form-group">
@@ -191,27 +196,21 @@
               formControlName="confirmPass"
               placeholder="Repite tu contraseña"
               autocomplete="new-password"
-              required
             >
           </div>
 
         </div>
 
-
         <!-- BOTÓN -->
         <button type="submit" class="login-button">
-
           Crear cuenta
           <span>→</span>
-
         </button>
 
       </form>
 
-
       <!-- INICIAR SESIÓN -->
       <div class="register-section">
-
         <p>
           ¿Ya tienes una cuenta?
 
@@ -219,17 +218,12 @@
             Inicia sesión
           </a>
         </p>
-
       </div>
-
 
       <!-- PIE DE PÁGINA -->
       <div class="form-footer">
-
         <span>ASISTENTE UNIVERSITARIO</span>
-
         <span>© 2026 · Todos los derechos reservados</span>
-
       </div>
 
     </div>

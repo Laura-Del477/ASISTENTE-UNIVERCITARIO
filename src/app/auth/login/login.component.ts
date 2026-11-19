@@ -13,9 +13,9 @@ export class LoginComponent implements OnInit {
   public formLogin!: FormGroup;
 
   email: string = "lauradel@gmail.com";
-  pass: string = "lala123"
+  pass: string = "lala123";
 
-  isLogin: boolean = true; 
+  isLogin: boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -27,10 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   formInit() {
+
     this.formLogin = this.fb.group({
       email: [""],
       pass: [""]
     });
+
   }
 
   // Metodo para iniciar sesion
@@ -39,27 +41,26 @@ export class LoginComponent implements OnInit {
 
     const data = this.formLogin.value;
 
-    if (data.email != this.email || data.pass != this.pass ) {
-      this.isLogin = false
+    if (data.email != this.email || data.pass != this.pass) {
 
-      setTimeout (() =>{
-        this.isLogin =true
-      }, 2000)
+      this.isLogin = false;
 
-      
+      setTimeout(() => {
+        this.isLogin = true;
+      }, 2000);
+
     }
-    
-    else {
-      sessionStorage.setItem('login', 'true')
-      setTimeout (() => {
-        this.router.navigate(['./pass/dashboard'])
-      }, 2000)
-        
 
-       }
+    else {
+
+      sessionStorage.setItem('login', 'true');
+
+      setTimeout(() => {
+        this.router.navigate(['/pages/dashboard']);
+      }, 2000);
+
+    }
+
   }
 
 }
-
-
-

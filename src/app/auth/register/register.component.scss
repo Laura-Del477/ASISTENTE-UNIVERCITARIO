@@ -195,12 +195,13 @@
 .login-form-wrapper {
   width: 100%;
   max-width: 420px;
+  margin: auto;
 }
 
 /* ENCABEZADO */
 
 .form-header {
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 }
 
 .form-label {
@@ -227,7 +228,7 @@
    FORMULARIO
 ========================== */
 
-form {
+.register-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -283,6 +284,27 @@ form {
 
 .input-container input::placeholder {
   color: #aaa2b3;
+}
+
+/* MENSAJES */
+
+.register-message {
+  padding: 11px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.register-message.error {
+  color: #b42318;
+  background-color: #fff0ee;
+  border: 1px solid #ffd0ca;
+}
+
+.register-message.success {
+  color: #187447;
+  background-color: #edf9f1;
+  border: 1px solid #c8ebd4;
 }
 
 /* ==========================
@@ -363,28 +385,48 @@ form {
    RESPONSIVE
 ========================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
   .login-banner {
-    width: 45%;
     padding: 35px;
-  }
-
-  .login-form-section {
-    width: 55%;
-    padding: 30px;
   }
 
   .brand {
     margin-bottom: 45px;
   }
 
+  .login-form-section {
+    padding: 30px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .login-banner {
+    width: 42%;
+    padding: 30px;
+  }
+
+  .login-form-section {
+    width: 58%;
+    padding: 25px;
+  }
+
   .banner-text h1 {
     font-size: 35px;
   }
 
+  .banner-text p {
+    font-size: 14px;
+  }
+
   .academic-illustration {
     height: 180px;
+  }
+
+  .book-illustration {
+    width: 230px;
   }
 
 }
